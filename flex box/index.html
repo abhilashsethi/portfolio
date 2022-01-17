@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        background-color: black;
+        color: white;
+      }
+      .sec-1{
+      
+      }
+      .header {
+        display: flex;
+        justify-content: center;
+        /* background-color: aqua; */
+      }
+      .header li{
+          margin: 10px;
+          list-style: none;
+      }
+     
+     .header .item-1 {
+        width: 100px;
+        font-size: 23px;
+        margin-top: 5px;
+      }
+      .item-2 {
+          
+      }
+      .item-3 {
+          
+      }
+      .item-4 {
+          
+      }
+      .item-5 {
+          
+      }
+      .item-6 {
+          
+      }
+      .header .item-7 {
+        margin-left: 300px;
+      }
+      @media (max-width: 480px){
+          .header{
+              flex-direction: column;
+              background-color: aqua;
+              align-items: center;
+          }
+          .header .item-1{
+              width: 50px;
+          }
+          .header .item-7{
+            margin-right: 300px;
+          }
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sec-1">
+      <ul class="header">
+        <li class="item-1"><a href="#">Coders</a></li>
+        <li class="item-2"><a href="#">HOME</a></li>
+        <li class="item-3"><a href="#">ABOUT</a></li>
+        <li class="item-4"><a href="#">SERVICES</a></li>
+        <li class="item-5"><a href="#">PAGES</a></li>
+        <li class="item-6"><a href="#">BLOG</a></li>
+        <li class="item-7"><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
