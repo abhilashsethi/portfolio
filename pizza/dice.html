@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dice Game</title>
+</head>
+<body>
+
+     Name: <input type="text" value="Abhilash"> 
+     <button type="button" id="1" class="dice">Roll the Dice</button>
+     Score: <span> </span> <br> <br>
+
+     Name: <input type="text" value="Danish"> 
+     <button type="button" id="2" class="dice">Roll the Dice</button>
+     Score: <span> </span> <br> <br>
+
+     Name: <input type="text" value="Subhashree"> 
+     <button type="button" id="3" class="dice">Roll the Dice</button>
+     Score: <span> </span> <br> <br>
+
+     Name: <input type="text" value="Sudhanshu"> 
+     <button type="button" id="4" class="dice">Roll the Dice</button>
+     Score: <span> </span> <br> <br>
+
+     Name: <input type="text" value="Abhishek"> 
+     <button type="button" id="5" class="dice">Roll the Dice</button>
+     Score: <span> </span> <br> <br>
+
+     <button id="winner"> Find Winner </button> <br> <br>
+     <div id="result"></div>
+
+     <script>
+           players =  document.querySelectorAll("input")
+           buttons = document.querySelectorAll(".dice")
+           scores = document.querySelectorAll("span")
+           winnerButton = document.getElementById("winner")
+           result = document.getElementById("result")
+
+          for( let t of buttons){
+              t.addEventListener("click", rollTheDice)
+          }
+
+           function rollTheDice(e){
+               user_id = e.target.id - 1
+               dice = [1,2,3,4,5,6]
+               random_index = parseInt(Math.random()*dice.length)
+               dice_result = dice[random_index]
+            //    console.log(dice_result)
+               scores[user_id].innerText = dice_result
+
+           }
+           winnerButton.addEventListener("click", findWinner)
+           function findWinner(){
+               max = 0 
+               for(t of scores){
+                   if (t.innerText>max){
+                       max = t.innerText
+                   }
+               }
+               names = ""
+               for(i = 0; i<scores.length;i++ ){
+                   if(scores[i].innerText == max){
+                      names = names + players[i].value + ","
+                   }
+               }
+
+               result.innerText = `Winners are ${names.substr(0,names.length-1)} as they scored ${max}`
+
+           }
+
+     </script>
+    
+</body>
+</html>

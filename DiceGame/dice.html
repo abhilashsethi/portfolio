@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name : <input type="text" name="" value="Abhilash">
+    <button type="button" id="1" class="dice">Roll The Dice</button>
+   Scroe : <span> </span> <br> <br>
+
+   Name : <input type="text" name="" value="Danish">
+    <button type="button" id="2" class="dice">Roll The Dice</button>
+   Scroe : <span> </span> <br> <br>
+
+   Name : <input type="text" name="" value="Subhashree">
+    <button type="button" id="3" class="dice">Roll The Dice</button>
+   Scroe : <span> </span> <br> <br>
+
+   Name : <input type="text" name="" value="Sudhanshu">
+    <button type="button" id="4" class="dice">Roll The Dice</button>
+   Scroe : <span> </span> <br> <br>
+
+   Name : <input type="text" name="" value="Abhishek">
+    <button type="button" id="5" class="dice">Roll The Dice</button>
+   Scroe : <span> </span> <br> <br>
+
+   <button id="winner">Find Winner</button> <br><br>
+   <div id="result"></div>
+
+    <script>
+
+        buttons = document.querySelectorAll(".dice")
+        players = document.querySelectorAll("input")
+        scroes = document.querySelectorAll("span")
+        winnerButton = document.getElementById("winner")
+        result = document.getElementById("result")
+
+        winnerButton.disabled = true
+        for(let t of buttons){
+            t.addEventListener("click", rollTheDice)
+        }
+
+        let button_clicks = 0
+        function rollTheDice(e){
+            button_clicks++
+            if(button_clicks == 5){
+                winnerButton.disabled = false
+            }
+            user_id = e.target.id-1
+            dice = [1,2,3,4,5,6]
+            random_index = parseInt(Math.random()*dice.length)
+            dice_result = dice[random_index]
+            scroes[user_id].innerText = dice_result
+            buttons[user_id].disabled = true
+        }
+
+        winnerButton.addEventListener("click", findWinner)
+
+        function findWinner(){
+             max = 0
+        for(let t of scroes){
+            if(t.innerText > max){
+                max = t.innerText
+            }
+        }
+         names = ""
+        for(i=0; i<scroes.length; i++){
+            if(scroes[i].innerText == max){
+                names = names + players[i].value + ","
+            }
+        }
+        result.innerText = `Winners are ${names.substr(0,names.length-1)} as they scored ${max}`
+        winnerButton.disabled = true
+    }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Roboto:wght@100;500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap");
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-color: rgba(0, 0, 0, 0.849);
+      }
+      .flx1 {
+        display: flex;
+        /* background-color: lime; */
+      }
+      .flx2 {
+        display: flex;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      .item1 {
+        margin-left: 30px;
+        margin-top: 5px;
+        font-family: "Outfit", sans-serif;
+      }
+      .logo {
+        font-size: 23px;
+        margin-left: 150px;
+        margin-right: 50px;
+        font-family: "Roboto", sans-serif;
+      }
+      .contct {
+        margin-left: 400px;
+        border: 2px solid aqua;
+        background-color: aqua;
+        padding: 10px 20px;
+        font-family: "Outfit", sans-serif;
+        border-radius: 5px;
+      }
+      .contct a {
+        color: black;
+      }
+      @media (max-width: 640px) {
+        .flx1,
+        .flx2 {
+          flex-direction: column;
+          /* background-color: aqua; */
+          align-items: center;
+        }
+        .contct {
+          margin-right: 300px;
+        }
+        .item1 {
+          margin-left: 60px;
+        }
+        .sec1 {
+          margin-right: 130px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sec1">
+      <ul class="flx1">
+        <li class="logo"><a href="#">Coders</a></li>
+        <ul class="flx2">
+          <li class="item1"><a href="#">HOME</a></li>
+          <li class="item1"><a href="#">ABOUT</a></li>
+          <li class="item1"><a href="#">SERVICES</a></li>
+          <li class="item1"><a href="#">PAGES</a></li>
+          <li class="item1"><a href="#">BLOG</a></li>
+        </ul>
+        <li class="contct"><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
